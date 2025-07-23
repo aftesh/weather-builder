@@ -1,23 +1,73 @@
-[gd_scene load_steps=5 format=3 uid="uid://cekp1nj0bh0e2"]
+[gd_scene load_steps=9 format=3 uid="uid://cekp1nj0bh0e2"]
 
 [ext_resource type="Script" uid="uid://usk857vibej8" path="res://scripts/player.gd" id="1_3vyb7"]
+[ext_resource type="Texture2D" uid="uid://c8y7aoscme77l" path="res://textures/player.png" id="2_g2els"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhqgy"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
+atlas = ExtResource("2_g2els")
+region = Rect2(0, 32, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qlg0r"]
+atlas = ExtResource("2_g2els")
+region = Rect2(16, 32, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_g2els"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhqgy")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqkch")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qlg0r")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 10.0
+}]
 
 [sub_resource type="QuadMesh" id="QuadMesh_3vyb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(9, 15)
 
 [node name="player" type="CharacterBody2D"]
+texture_filter = 1
 script = ExtResource("1_3vyb7")
 
 [node name="player anim" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_g2els")
+animation = &"walk"
+autoplay = "idle"
+frame_progress = 0.982301
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+visible = false
 position = Vector2(3.57628e-07, 5.96046e-07)
 scale = Vector2(20, 20)
 mesh = SubResource("QuadMesh_3vyb7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_g2els")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.0
