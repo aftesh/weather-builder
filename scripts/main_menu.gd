@@ -3,7 +3,7 @@ extends Node2D
 
 
 func _on_play_test_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/test_lvl.tscn")
+	get_tree().change_scene_to_file("res://scenes/map.tscn")
 
 
 func _on_quit_pressed() -> void:
