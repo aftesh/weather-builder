@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var speed = 100
-var speedr = speed * 2
+var speedr = speed * 5
 
 
 @onready var anim = $"player anim"
