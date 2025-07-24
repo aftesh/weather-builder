@@ -46,7 +46,7 @@ size = Vector2(9, 15)
 texture_filter = 1
 script = ExtResource("1_3vyb7")
 
-[node name="player anim" type="AnimatedSprite2D" parent="."]
+[node name="anim" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_g2els")
 animation = &"walk"
@@ -63,11 +63,7 @@ mesh = SubResource("QuadMesh_3vyb7")
 position = Vector2(-0.5, 2.5)
 shape = SubResource("RectangleShape2D_g2els")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2d" type="Camera2D" parent="."]
 zoom = Vector2(3, 3)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.1
-drag_top_margin = 0.1
-drag_right_margin = 0.1
-drag_bottom_margin = 0.0
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
