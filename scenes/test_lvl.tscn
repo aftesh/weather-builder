@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://dvphg76lci81v"]
+[gd_scene load_steps=7 format=4 uid="uid://dvphg76lci81v"]
 
 [ext_resource type="Script" uid="uid://wveic6cykvnc" path="res://scripts/test_lvl.gd" id="1_gpf4c"]
 [ext_resource type="Texture2D" uid="uid://d1t0j63my4iym" path="res://textures/tile atlas.png" id="2_ar2xt"]
 [ext_resource type="PackedScene" uid="uid://cekp1nj0bh0e2" path="res://scenes/player.tscn" id="2_n1f72"]
+[ext_resource type="PackedScene" uid="uid://bqgrggn8akv1t" path="res://scenes/furnes.tscn" id="4_xfjps"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xfjps"]
 texture = ExtResource("2_ar2xt")
@@ -160,3 +161,6 @@ tile_map_data = PackedByteArray("AAD/////AAAAAAMAAAD//wAAAAAAAAQAAAD//wEAAAAAAAU
 tile_set = SubResource("TileSet_vrbj3")
 
 [node name="player" parent="." instance=ExtResource("2_n1f72")]
+
+[node name="furnes" parent="." instance=ExtResource("4_xfjps")]
+position = Vector2(23, 1)

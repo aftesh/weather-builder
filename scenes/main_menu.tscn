@@ -22,5 +22,13 @@ offset_right = 523.0
 offset_bottom = 371.0
 text = "quit"
 
+[node name="play" type="Button" parent="buttons"]
+offset_left = 484.0
+offset_top = 233.0
+offset_right = 525.0
+offset_bottom = 264.0
+text = "play"
+
 [connection signal="pressed" from="buttons/play test" to="." method="_on_play_test_pressed"]
 [connection signal="pressed" from="buttons/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="buttons/play" to="." method="_on_play_pressed"]
